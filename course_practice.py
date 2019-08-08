@@ -86,6 +86,23 @@ fff();
 fff("ana","pierina");
 fff(par_two="pierina");
 
+
+### Functions Applied to Functions
+def mult_by_five(x):
+    return 5 * x
+
+def call(fn, arg):
+    """Call fn on arg"""
+    return fn(arg)
+
+def squared_call(fn, arg):
+    """Call fn on the result of calling fn on arg"""
+    return fn(fn(arg))
+
+print(call(mult_by_five, 5))
+print(squared_call(mult_by_five, 5))
+
+
 ### Functions that operate on other funcitons are called 'Higher order functions'
 
 # Example 1
@@ -261,7 +278,7 @@ print(denominator)
 
 """
 ==============================================
-9. Loops
+9. Loops and List Comprehensions
 ==============================================
 """
 
@@ -305,4 +322,50 @@ while i<5 :
     i += 1
     
 # List comprehensions
+squares = [n**2 for n in range(10)]
+    
+for q in  [n*10 for n in range(4,8)]:
+    print("list comprenhension ... ", q)
+
+# with an if
+for q in  [n*10 for n in range(1,7) if n%2 == 0]:
+    print("list comprenhension ... ", q)
+
+# in multiple lines    
+multiplied = [
+        n*10 
+        for n in range(1,7) 
+        if n%2 == 0]
+for q in multiplied:
+    print("list comprenhension ... ", q)
+
+"""
+==============================================
+11. Strings and Dictionaries
+==============================================
+"""
+
+
+simple_quote = "Peter's behaviour."
+print(simple_quote)
+
+double_quote = 'He is called "sacred man".'
+print(double_quote)
+
+# print in one line
+print(simple_quote, end = '')
+print(double_quote, end = '')
+
+simple_quote = """HOLA
+PIER
+this is joke"""
+print(simple_quote)
+
+backslash_string = 'This is Anna\'s\\Dany\'s planet! \nChoose one.'
+print(backslash_string)
+
+# 
+
+
+
 
